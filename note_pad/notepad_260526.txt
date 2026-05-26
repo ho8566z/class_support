@@ -1,0 +1,643 @@
+20260526
+
+
+# 자주 사용하는 모듈: 내장 모듈
+# 이러한 내장 모듈은 절대로 외우는 것이 아니고, 가볍게 훑고 필요할 때, 
+찾아서 사용하면 됨
+
+# math 모듈: 수학과 관련된 모듈
+'''
+fabs(): 절댓값을 반환
+ceil(): 소수점 이하 올림한 값을 반환
+floor(): 소수점 이하 내림한 값을 반환
+trunc(): 소수점 이하 버림한 값을 반환
+gcd(): 최대공약수를 반환'
+factorial(): 팩토리얼한 값을 반환
+sqrt(): 제곱근을 반환
+'''
+
+import math
+
+print(f'math.fabs(-3.1415): {math.fabs(-3.1415)}')      # 절댓값
+print(f'math.ceil(3.1415): {math.ceil(3.1415)}')        # 올림
+print(f'math.floor(-3.1415): {math.floor(-3.1415)}')    # 내림
+print(f'math.trunc(-3.1415): {math.trunc(-3.1415)}')    # 버림
+print(f'math.gcd(9, 21): {math.gcd(9, 21)}')            # 절댓값
+print(f'math.factorial(7): {math.factorial(7)}')        # 팩토리얼
+print(f'math.sqrt(9): {math.sqrt(9)}')                  # 제곱근
+math.fabs(-3.1415): 3.1415
+# math.ceil(3.1415): 4
+# math.floor(-3.1415): -4
+# math.trunc(-3.1415): -3
+# math.gcd(9, 21): 3
+# math.factorial(7): 5040
+# math.sqrt(9): 3.0
+
+------------------------------------------------------------------------
+# 파이썬 내장 함수 중에서 수학과 관련된 함수
+'''
+sum(): 전체값을 반환
+max(): 최댓값을 반환
+min(): 최솟값을 반환
+abs(): 절댓값을 반환
+pow(): 거듭제곱을 반환
+round(): 반올림한 값을 반환
+'''
+
+------------------------------------------------------------------------
+# random 모듈: 난수를 발생시키는 모듈
+'''
+random(): 0이상 1미만의 난수 발생
+randint(n1, n2): n1이상 n2이하의 난수 발생
+randrange(n1, n2): n1이상 n2미만의 난수 발생
+sample(range(n1, n2), n3): n1이상 n2미만의 난수 n3개 발생(중복없이)
+choice(): 무작위 1개 아이템 선택
+shuffle(): 아이템 순서 섞음
+'''
+
+import random
+
+print(f'random(): {random.random()}')                   # 0이상 1미만 난수
+print(f'random(): {random.randint(0, 9)}')              # 0이상 9이하 난수
+print(f'random(): {random.randrange(0, 9)}')            # 0이상 9미만 난수
+print(f'random(): {random.sample(range(0, 10), 3)}')    # 0이상 10미만 난수 3개
+
+
+listVar = [1, 2, 3, 4, 5, 6]
+
+# 무작위로 1개 아이템 선택
+print(f'choice: {random.choice(listVar)}')
+print(f'choice: {random.choice(listVar)}')
+
+
+# 아이템 순서 섞음
+random.shuffle(listVar)
+print(f'listVar: {listVar}')    #listVar: [4, 1, 6, 5, 2, 3]
+random.shuffle(listVar)
+print(f'listVar: {listVar}')    #listVar: [3, 4, 2, 1, 6, 5]
+
+------------------------------------------------------------------------
+# time 모듈: 시간 관련 모듈(UTC)
+'''
+localtime(): 시스템의 현재 시간을 반환
+gmtime(): GMT 시간을 반환
+strftime(): 시간 포맷 코드에 따른 출력
+'''
+
+import time
+
+lt = time.localtime()       # 시스템 시간
+print(f'lt: {lt}')
+# lt: time.struct_time(tm_year=2026, tm_mon=5, tm_mday=26, tm_hour=9, 
+# tm_min=49, tm_sec=39, tm_wday=1, tm_yday=146, tm_isdst=0)
+
+print(f'년 일: {lt.tm_yday}')   # 년 일: 146
+print(f'년도: {lt.tm_year}')    # 년도: 2026
+print(f'월: {lt.tm_mon}')       # 월: 5
+
+week = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
+
+print(f'요일: {week[lt.tm_wday]}')    # 요일: 화요일
+
+'''
+0: 월요일
+1: 화요일
+2: 수요일
+3: 목요일
+4: 금요일
+5: 토요일
+6: 일요일
+'''
+
+
+gt = time.gmtime()      #GMT 시간: 그리니치 천문대 기준 시간
+
+print(F'gt: {gt}')
+# gt: time.struct_time(tm_year=2026, tm_mon=5, tm_mday=26, tm_hour=0, 
+# tm_min=49, tm_sec=39, tm_wday=1, tm_yday=146, tm_isdst=0)
+
+print(F'gt.tm_hour: {gt.tm_hour}')      # gt.tm_hour: 0(그리니치 기준: 0시)
+
+
+print(f'시:분:초: {time.strftime('%H:%M:%S', time.localtime())}')       
+#시:분:초: 10:02:56
+print(f'연:월:일 시:분:초: {time.strftime('%Y:%m:%d %H:%M:%S', time.localtime())}')
+# 연:월:일 시:분:초: 2026:05:26 10:04:32
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# quiz - lotto game
+
+# 20260526ex --> ex001
+# lotto_ex.py : 로또 함수 모듈
+
+# quiz - lotto game
+
+import random
+
+userNums = []
+randNums = []
+collect = []
+
+def setUNumbers(ns):      # setter: 세팅하는 함수(= set + userNums/uNumbers)
+    global userNums
+    userNums = ns
+
+def getUNumbers():       # getter: 데이터를 조회하는 함수(= get + userNums/uNumbers)
+    return userNums
+
+def setRNumbers():
+    global randNums
+    randNums = random.sample(range(1, 46), 6)
+
+def getRNumbers():
+    return randNums
+
+def compareNumbers():
+    global userNums
+    global randNums
+    global collect
+
+    collect = []
+    for item in userNums:
+        if randNums.count(item) != 0:
+            collect.append(item)
+    
+    return collect
+
+------------------------------------------------------------------------
+# main.py : main파일
+
+import lotto_ex as lm
+
+nums = []
+
+print('1부터 45까지의 정수 6개를 입력하세요.')
+nums.append(int(input('첫번째 숫자 입력: ')))
+nums.append(int(input('두번째 숫자 입력: ')))
+nums.append(int(input('세번째 숫자 입력: ')))
+nums.append(int(input('네번째 숫자 입력: ')))
+nums.append(int(input('다섯번째 숫자 입력: ')))
+nums.append(int(input('여섯번째 숫자 입력: ')))
+
+lm.setUNumbers(nums)    #사용자가 선책한 번호모음
+lm.setRNumbers()        #랜덤으로 선택한 번호모음
+
+print(f'이번주 로또 번호: {lm.getRNumbers()}')
+print(f'내가 선택한 로또 번호: {lm.getUNumbers()}')
+print(f'일치하는 로또 번호: {lm.compareNumbers()}')
+# 1부터 45까지의 정수 6개를 입력하세요.
+# 첫번째 숫자 입력: 1
+# 두번째 숫자 입력: 3
+# 세번째 숫자 입력: 12
+# 네번째 숫자 입력: 16
+# 다섯번째 숫자 입력: 33
+# 여섯번째 숫자 입력: 43
+# 이번주 로또 번호: [9, 36, 19, 6, 41, 30]
+# 내가 선택한 로또 번호: [1, 3, 12, 16, 33, 43]
+# 일치하는 로또 번호: []
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 객체 지향 프로그래밍: OOP(Object-Oriented-Programming)
+
+# 컴퓨터 프로그램을 명령어의 단순한 나열(:절차 지향 프로그래밍)로 보는 대신, 
+# '객체'라는 독립된 작은 단위들의 모임으로 파악하고 객체들이 서로 상호작용하도록 만드는 개발 방법론
+# -> 현실 세계의 사물이나 개념을 소프트웨어 안으로 녹여내기 위해 고안된 방식
+
+# 객체(object): 세상에 존재하는 사람, 사물 등의 모든 형체가 있는 것이며, 속성과 기능으로 구성된다
+# (사물ex: 키보드, 모니터 등등)
+# 속성(attribute): 객체를 구성하는 요소(ex: 크기, 무게, 부피, 색상 등등)
+# 기능(function): 객체가 하는 행위(ex: 걷는다, 말한다, 클릭한다 등등)
+
+# 객체(object) = 속성(attribute) + 기능(function)
+
+------------------------------------------------------------------------
+# ex) 계산기
+# 객체: 계산기, 속성: 사용자로 부터 입력받은 숫자, 기능: 덧셈, 뺄셈, 곱셈, 나눗셈 등
+
+------------------------------------------------------------------------
+# 객체 + 객체
+# 객체는 단독으로도 사용되기도 하지만, 서로 유기적으로 관계를 맺고 사용되기도 한다
+# 계산 프로그램에서 '계산기'라는 객체와 '프린트'객체가 서로 유기적으로 관계를 맺어서 입력받은 숫자를 계산하고, 
+# 프린트되는 방식으로 결과가 이루어진다
+
+# 객체 지향 프로그래밍: 우리가 만드는 프로그램을 객체 단위로 구분하고, 각각의 객체를 서로 연관지어서 부품을 
+# 조립하여서 유기적인 동작을 하도록 하는 프로그래밍 패러다임이다
+
+------------------------------------------------------------------------
+# 클래스(Class): 객체를 만들기 위한 틀/설계도
+# ex) 붕어빵 틀(=클래스) -> 붕어빵(=객체)
+
+# 동일한 클래스를 통해 만들어진 객체라도 서로 완전히 같을 수 없으며, 전혀 다르게 독립적으로 인식된다
+
+------------------------------------------------------------------------
+# 클래스의 구조
+
+# -> class선언
+# class FishBread: (class키워드 + class이름:)
+# # 클래스 이름은 함수와 구분하기 위해 소문자가 아닌, 대문자로 시작
+
+# -> 클래스 속성 정의
+# def __init__(self, f, b):
+#   self.flour = f
+#   self.bean = b
+# # -> '__init__': '변수 선언 및 초기화'와 같이 메모리를 청소해
+# # 메모리를 사용할 준비를 하는 과정(=클래스 선언)
+# # self 키워드는 클래스 자신을 가리킨다는 의미를 지님
+# # (-> 첫번재 매개변수는 무조건 self)
+
+# -> 클래스 기능
+# def makeFishBread(self):
+#   print('붕어빵 제조')
+# # 함수 'makeFishBread()'또한 self를 사용해야 'FishBread'클래스 내부에서 기능한다
+
+------------------------------------------------------------------------
+# 클래스 문법(객체를 만듥기 위한 틀/설계도)
+
+class FishBread:    #클래스 선언
+    # 속성(attribute) 정의
+    def __init__(self, f, b):
+        self.flour = f
+        self.bean = b
+        
+    # 기능(function, method) 정의
+    def makeFishBread(self):
+        print('붕어빵 제조')
+		
+------------------------------------------------------------------------
+# 붕어빵 클래스로부터 객체를 만들어 보자(객체 생성)
+
+class FishBread:    #클래스 선언
+    # 속성(attribute) 정의
+    def __init__(self, f, b):
+        self.flour = f
+        self.bean = b
+        
+    # 기능(function, method) 정의
+    def makeFishBread(self):
+        print('붕어빵 제조')
+
+# 실행 ex)
+myFishBread = FishBread('팥', '밀가루')
+friendFishBread = FishBread('호박', '쌀')
+hisFishBread = FishBread('꿀', '밀가루')
+
+print(f'나의 붕어빵의 속 내용물: {myFishBread.flour}')
+# print(f'나의 붕어빵의 반죽: {myFishBread.bean}')
+# print(f'친구의 붕어빵의 속 내용물: {friendFishBread.flour}')
+# print(f'친구의 붕어빵의 반죽: {friendFishBread.bean}')
+# print(f'그의 붕어빵의 속 내용물: {hisFishBread.flour}')
+# print(f'그의 붕어빵의 반죽: {hisFishBread.bean}')
+# #나의 붕어빵의 속 내용물: 팥
+# #나의 붕어빵의 반죽: 밀가루
+# #친구의 붕어빵의 속 내용물: 호박
+# #친구의 붕어빵의 속 내용물: 쌀
+# #그의 붕어빵의 속 내용물: 끌
+# #그의 붕어빵의 속 내용물: 밀가루
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 계산기 클래스
+class Calculator:
+    #속성
+    def __init__(self, n1, n2):
+        self.num1 = n1
+        self.num2 = n2
+
+    #기능
+    def add(self):
+        print(f'add: {self.num1 + self.num2}')
+
+    def sub(self):
+        print(f'sub: {self.num1 - self.num2}')
+
+    def mul(self):
+        print(f'mul: {self.num1 * self.num2}')
+
+    def div(self):
+        print(f'div: {self.num1 / self.num2}')
+	
+------------------------------------------------------------------------
+# 계산기 클래스(객체 생성)
+class Calculator:
+    #속성
+    def __init__(self, n1, n2):
+        self.num1 = n1
+        self.num2 = n2
+
+    #기능
+    def add(self):
+        print(f'add: {self.num1 + self.num2}')
+
+    def sub(self):
+        print(f'sub: {self.num1 - self.num2}')
+
+    def mul(self):
+        print(f'mul: {self.num1 * self.num2}')
+
+    def div(self):
+        print(f'div: {self.num1 / self.num2}')
+    
+myCalculator = Calculator(10, 20)
+myCalculator.add()      #add: 30
+myCalculator.sub()      #sub: -10
+myCalculator.mul()      #mul: 200
+myCalculator.div()      #div: 0.5
+
+frindcalculator = Calculator(100, 200)
+frindcalculator.add()   #add: 300
+frindcalculator.sub()   #sub: -100
+frindcalculator.mul()   #mul: 20000
+frindcalculator.div()   #div: 0.5
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 인간 클래스
+class Human:
+    #속성
+    def __init__(self, height, weight):
+        self.height = height
+        self.weight = weight
+
+    #기능
+    def walk(self):
+        print('걷다')
+    
+    def run(self):
+        print('뛰다')
+
+    def printMyInfo(self):
+        print(f'나의 신장: {self.height}')
+        print(f'나의 체중: {self.weight}')
+		
+------------------------------------------------------------------------
+# 인간 클래스(객체 생성)
+class Human:
+    #속성
+    def __init__(self, height, weight):
+        self.height = height
+        self.weight = weight
+
+    #기능
+    def walk(self):
+        print('걷다')
+    
+    def run(self):
+        print('뛰다')
+
+    def printMyInfo(self):
+        print(f'나의 신장: {self.height}')
+        print(f'나의 체중: {self.weight}')
+
+human1 = Human(188, 87)
+human2 = Human(165, 49)
+
+human1.printMyInfo()    #188, 87
+human2.printMyInfo()    #165, 49
+
+human1 = human2
+human1.printMyInfo()    #165, 49
+
+human1.height = 200
+human1.weight = 39
+
+human2.printMyInfo()    #200, 39
+# (human2의 데이터를 human1가 가리키게 되었기 때문에 human1의 데이터를 바꾸면, 
+# human2의 데이터 또한 변경된다)
+
+# Gemini Said: 'human1 = human2'는 데이터를 복사하는 것이 아니라 
+# "너도 내가 보고 있는 거 같이 보자"라고 주소를 공유하는 명령이다
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 텍스트 파일 다루기
+# 문자열의 영구적으로 보관하기 위함
+
+# 1단계: 파일 열기
+# 파일을 여는 단계, 'open()' 함수를 이용한다(파일 외 ex: 데이터 베이스 등등)
+# 파일 열기에 성공하면, 파일은 객체로 만들어져 메모리에 생성된다
+
+# 2단계: 파일 쓰기/읽기
+# 문자열을 쓰거나 읽음, 문자열을 쓸때는 'write()' 함수를, 읽을 때는 'read()' 함수를 이용한다
+
+# 3단계: 파일 닫기
+# 파일을 닫는 단계로, 쓰거나 읽기가 끝난 파일은 'close()' 함수를 이용해 닫는다
+
+
+file = open('C:/lyh/python/test.txt', 'w')      # 파일을 '쓰기'모드로 open한다
+# open('C:/lyh/python: 원하는 설치 경로/test.txt: 파일명', 'w: 파일 목적'): open()함수
+result = file.write('Hello, Python.')           # 쓰기(write)
+print(f'result: {result}')                      # 쓰여진 문자열의 길이
+file.close()                                    # 파일 닫기(close, 외부자원 해제)
+
+------------------------------------------------------------------------
+file = open('C:/lyh/python/test.txt', 'r')
+readResult = file.read()
+print(f'readResult: {readResult}')                # readResult: Hello, Python.
+
+# C:/lyh/python/test.txt <-- '100' 입력
+print(f'readResult: {readResult}')                # readResult: 100
+print(f'readResult type: {type(readResult)}')     # readResult type: <class 'str'>
+
+readResult = int(readResult)
+readResult += 1
+print(f'readResult: {readResult}')                # readResult: 101
+
+file.close
+
+------------------------------------------------------------------------
+file = open('C:/lyh/python/test.txt', 
+'w: write((새로이)쓰기) / a: append(추가로 쓰기) / r: read(읽기)')
+
+file = open('C:/lyh/python/test.txt', 'w')
+file.write('hello.')
+file.close()
+
+with open('C:/lyh/python/test.txt', 'w') as file:
+    file.write('hello.')
+
+file = open('C:/lyh/python/test.txt', 'a')
+file.write('\nhi.')
+file.close()
+
+with open('C:/lyh/python/test.txt', 'a') as file:
+    for n in range(10):
+        file.write('\nhello.')      
+# close는 'with ~ as'구문을 쓰면, 알아서 적용됨
+
+file = open('C:/lyh/python/test.txt', 'r')
+readResult = file.read()
+print(f'readResult: {readResult}')   
+file.close()
+# readResult: hello.
+# hi.
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 예외 처리(보험)
+# 세상에 모든 프로그램은 100% 완벽할 수 없다, 때문에 -> '보험'
+
+print(10 + 20)      #30
+print(10 - 20)      #-10
+print(10 * 20)      #200
+print(10 / 20)      #0.5
+
+
+print(10 + 20)      #30
+print(10 / 0)       #ZeroDivisionError: division by zero
+print(10 - 20)      #출력(x)
+print(10 * 20)      #출력(x)
+
+------------------------------------------------------------------------
+# 예외 처리의 기본 문법
+'''
+try ~ except
+'''
+
+print(10 + 20)      #30
+try:
+    print(10 / 0)   #출력(x): 에러가 발생하더라도, 넘어감
+except Exception as e:
+    print(f'Exception: {e}')    #Exception: division by zero
+else:
+    print('에러가 발생하지 않았다')     #try와 반대의 결과 도출
+finally:
+    print('에러가 발생하든, 하지않든 무조건 실행되는 코드')
+
+print(10 - 20)      #-10
+print(10 * 20)      #200
+
+------------------------------------------------------------------------
+# try ~ except에 많은 코드를 넣으면, 오류가 발생한 다음의 정상적인 
+# 코드들은 실행되지 않는다
+try:
+    print(10 + 20)      #30
+    print(10 / 0)       #출력(x): 에러가 발생하더라도, 넘어감
+    print(10 - 20)      #-10
+    print(10 * 20)      #200
+except Exception as e:
+    print(f'Exception: {e}')    #Exception: division by zero
+	
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 20260526ex --> ex003
+
+# config.py : 상수 파일
+
+DIARY_WRITE = 1
+DIARY_READ = 2
+SYSTEM_SHUTDPWN = 99
+
+------------------------------------------------------------------------
+# util.py : 함수 파일
+
+import time
+
+def getDay():
+    return time.strftime('%Y-%m-%d', time.localtime())
+
+def getTime():
+    return time.strftime('%H:%M:%S', time.localtime())
+
+------------------------------------------------------------------------
+# oneDiary.py : main 파일
+
+import config
+from util import getDay, getTime
+
+
+dFlag = True
+
+while dFlag:
+    selectedMenuNum = int(input('메뉴: 1.일기작성    2.일기조회    99종료'))
+
+    if selectedMenuNum == config.DIARY_WRITE:
+
+        print(f'[{getDay()}] 한줄 일기를 작성하세요.')
+
+        todayDiary = input()
+        with open('C:/lyh/python/diary.txt', 'a') as f:
+            f.write(f'[{getDay()} {getTime()}] {todayDiary}\n')
+
+    elif selectedMenuNum == config.DIARY_READ:
+        
+        with open('C:/lyh/python/diary.txt', 'r') as f:
+            str = f.read()
+            print(str)
+
+    elif selectedMenuNum == config.SYSTEM_SHUTDPWN:
+        print('end')
+        dFlag = False
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# 20260526ex --> ex004
+
+# our_dice.py : 클래스 파일
+
+import random
+
+class Dice:
+    def __init__(self):
+        self.numbers = []
+
+    def playDice(self):
+        self.numbers.append(random.randint(1, 6))
+
+    def getNumbers(self):
+        return self.numbers
+    
+    def getSum(self):
+        return sum(self.numbers)
+
+------------------------------------------------------------------------
+# main.py : main 파일
+
+from our_dice import Dice
+
+def sortNumbers(*numbers):
+    list = sorted(numbers)
+    list.sort(reverse=True)
+    return list
+
+gamer1Dice = Dice()
+gamer2Dice = Dice()
+gamer3Dice = Dice()
+
+for i in range(5):
+    gamer1Dice.playDice()
+    gamer2Dice.playDice()
+    gamer3Dice.playDice()
+
+print(f'gamer1: {gamer1Dice.getNumbers()}')
+print(f'gamer2: {gamer2Dice.getNumbers()}')
+print(f'gamer3: {gamer3Dice.getNumbers()}')
+
+print(f'sum of gamer1: {gamer1Dice.getSum()}')
+print(f'sum of gamer2: {gamer2Dice.getSum()}')
+print(f'sum of gamer3: {gamer3Dice.getSum()}')
+
+sortedNumbers = sortNumbers(gamer1Dice.getSum(),
+                            gamer2Dice.getSum(),
+                            gamer3Dice.getSum())
+
+print(f'1등: {sortedNumbers[0]}, Winner')
+print(f'2등: {sortedNumbers[1]}')
+print(f'3등: {sortedNumbers[2]}')
+# gamer1: [3, 1, 1, 4, 1]
+# gamer2: [4, 6, 3, 6, 5]
+# gamer3: [6, 2, 4, 2, 6]
+# sum of gamer1: 10
+# sum of gamer2: 24
+# sum of gamer3: 20
+# 1등: 24, Winner
+# 2등: 20
+# 3등: 10
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
