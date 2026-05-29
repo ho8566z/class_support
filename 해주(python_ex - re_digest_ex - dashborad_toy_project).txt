@@ -1,0 +1,10 @@
+# python_ex --> re_digest_ex --> dashborad_toy_project
+
+==========================================
+#bankAccount --> [ [ bankAccount.py ] ]
+
+#db --> [ [ config.py ], [ dbManager.py ] ]
+
+#memberService --> [ [ memberService.py ] ]
+
+#[ [ main.py ] ]
