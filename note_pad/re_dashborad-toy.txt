@@ -2,10 +2,11 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
-import session
+from memberService import session
 import datetime
 import copy
 import json
+from memberService import session
 from db import config
 from db import backAccountDb
 
@@ -176,3 +177,4 @@ def setMoneyFlow():
             print('[올바른] 메뉴를 선택하세요.')
             return
 
+print(f'{config.BANK_ACNT}')
