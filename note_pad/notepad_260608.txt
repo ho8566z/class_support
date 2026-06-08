@@ -1,0 +1,447 @@
+20260608
+
+
+#월드 와이드 웹(World Wide Web, WWW)
+
+------------------------------------------------------------------------
+#HTML (HyperText Markup Language)
+(정보를 구조화하고, 링크를 통해 문서 간 이동을 가능하게 함)
+
+#URI (Uniform Resource Identifier)
+(각각의 자원을 고유하게 식별하기 위한 주소 체계 (이후 URL로 발전))
+
+#HTTP (HyperText Transfer Protocol)
+(클라이언트와 서버 간 문서 요청/응답을 위한 통신 프로토콜)
+
+------------------------------------------------------------------------
+#세계 최초의 웹사이트: https://hoazzinews.tistory.com/88
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+HTML(HyperText Markup Language)
+#웹페이지의 구조와 콘텐츠를 정의하는 표준 마크업 언어
+#HTML은 웹 페이지의 뼈대를 구성하고,텍스트, 이미지, 링크, 영상 등의 요소를 
+어떻게 배치하고 구조화할지를 정의
+(웹문서의 확장자, '데이터를 구조화'함)
+
+ex) <b>this page is mypage.</b>
+#<>: 태그(내용을 보여주거나, 구조화할때 사용함)
+#<>, </>: '<>'로 태그를 열고, '</>'로 태그를 닫음
+#this page is mypage.: Elements(웹문서의 내용)
+
+------------------------------------------------------------------------
+html문서 구조
+#<!DOCTYPE html>: HTML버전 알려주는 선언문
+#<html lang="en">: 웹페이지의 기본 언어가 영어(English)로 작성되었다고 
+브라우저나 검색엔진에 알려주는 역할
+
+#<head> ~ </head>: 브라우저에게 필요한 정보(화면에 안 보임)
+#<meta charset="UTF-8">: 웹페이지의 문자 인코딩 방식을 설정하는 역할
+#<title> ~ </title>: 탭 제목이나 북마크(즐겨찾기)에 표시될 이름을 지정
+
+#<body> ~ </body_>: 본 내용(실제 웹 브라우저 화면에 그려지는 모든 내용)
+
+#주석다는법: <!-- '~' -->
+
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<!-- HTML버전을 설정함 -->
+
+<html lang="en">
+<!-- html 태그는 웹문서의 시작을 알려줌 -->
+<head>
+    <meta charset="UTF-8">
+    <!-- '나홀로 태그: 닫는 태그 없이 홀로 사용됨' -->
+    <!-- 웹문서가 출력될때, 사용되는 인코딩을 설정하는 역할로, 현재는 대부분 UTF-8을 사용함 -->
+
+    <title>MYHOME</title>
+    <!-- <title> ~ </title>: 웹문서의 제목을 출력함 -->
+</head>
+<!-- 웹문서의 설정정보를 코딩함 -->
+
+<body>
+    This is index001 page.
+    <!-- 문서의 본 내용 -->
+</body>
+<!-- 웹문서에서 화면에 출력(렌더링)되는 정보를 코딩함 -->
+
+</html>
+<!-- /html 태그는 웹문서의 끝을 알려줌 -->
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 텍스트 관련 태그들에 대해서 -->
+
+    <!-- 제목 태그(hN) -->
+    <h1>주로 문단의 제목에 사용되는 태그1</h1>
+    <h2>주로 문단의 제목에 사용되는 태그2</h2>
+    <h3>주로 문단의 제목에 사용되는 태그3</h3>
+    <h4>주로 문단의 제목에 사용되는 태그4</h4>
+    <h5>주로 문단의 제목에 사용되는 태그5</h5>
+    <h6>주로 문단의 제목에 사용되는 태그6</h6>
+    <!-- h의 숫자가 작을수록 글자의 크기가 커짐 -->
+
+
+    <!-- 문단 태그(p) -->
+    <p>hello, html 1 / hello, html 2 / hello, html 3</p>
+
+
+    <!-- 줄바꿈 태그(br: 나홀로 태그) -->
+    <p>hello 1 / <br>
+        hello 2 / <br><br>
+        hello 3 / <br><br><br>
+        hello 4 / <br>
+        hello 5</p>
+    <!-- <br>태그를 넣은만큼, 개행됨 -->
+
+
+    <!-- 문단 사이에 구분자를 넣어주는 태그(hr: 나홀로 태그) -->
+    <hr>
+    <p>hello, html 1 / hello, html 2 / hello, html 3</p>
+
+
+    <!-- 텍스트와 관련된 태그 중에서 간혹 사용되는 태그모음 -->
+
+     <!-- 강조할때 사용하는 태그(볼드체): <strong></strong>, <b></b> -->
+    <p>hello, html 1 / <strong>hello, html 2</strong> / hello, html 3</p>
+    <p>hello, html 1 / hello, html 2 / <b>hello, html 3</b></p>
+
+    <hr>
+     <!-- 강조할때 사용하는 태그(기울임체): <em></em>, <i></i> -->
+    <p><em>hello, html 1</em> / hello, html 2 / hello, html 3</p>
+    <p>hello, html 1 / <i>hello, html 2</i> / hello, html 3</p>
+
+    <hr>
+     <!-- 볼드체 + 기울임체 -->
+    <p>hello, html 1 / <strong><i>hello, html 2</i></strong> / hello, html 3</p>
+
+    <hr>
+     <!-- 형광펜 효과: <mark></mark> -->
+    <p>hello, html 1 / hello, html 2 / <mark>hello, html 3</mark></p>
+
+    <hr>
+     <!-- 글씨를 작게: <small></small> -->
+    <p><small>hello, html 1</small> / hello, html 2 / hello, html 3</p>
+
+    <hr>
+     <!-- 삭제된 효과: <del></del> -->
+    <p>hello, html 1 / <del>hello, html 2</del> / hello, html 3</p>
+
+    <hr>
+     <!-- 아래 첨자: <sub></sub> -->
+    <p><sub>hello, html 1</sub> / hello, html 2 / hello, html 3</p>
+
+    <hr>
+     <!-- 위 첨자: <sup></sup> -->
+    <p>hello, html 1 / <sup>hello, html 2</sup> / hello, html 3</p>
+
+    <hr>
+     <!-- 공백 효과: &nbsp; -->
+    <p>hello, html 1 / hello, html 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / hello, html 3</p>
+
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+#HTML 태그는 화면에 배치되는 방식에 따라 크게 블록 레벨(Block-level) 요소와 
+인라인(Inline) 요소 두 가지로 나뉜다
+
+#자동 개행이 되는 태그: 블록 레벨 (Block-level) 요소
+(블록 레벨 태그들은 말 그대로 화면에서 하나의 커다란 '블록(상자)'을 차지한다.)
+
+- 줄바꿈 특징: 태그를 쓰면 무조건 새로운 줄에서 시작하고, 태그가 끝나면 다음 내용도 
+강제로 새로운 줄에 배치된다. (자동 개행)
+- 너비와 높이: 기본적으로 가로 너비를 100% 다 차지한다. 
+(옆에 다른 요소가 오지 못하게 땅을 통째로 차지하는 형태). 
+CSS로 가로(width)와 세로(height) 크기를 직접 지정할 수 있다.
+
+- 주요 태그 예시:
+<div> (레이아웃 분할을 위한 상자)
+<p> (문단)
+<h1> ~ <h6> (제목)
+<ul>, <ol>, <li> (목록)
+<form>, <hr> 등
+
+
+#자동 개행이 되지 않는 태그: 인라인 (Inline) 요소
+(인라인 태그들은 '선(Line) 안의 일부'로 취급된다. 텍스트 문장 안에서 특정 글자만 
+꾸며주거나 묶어줄 때 주로 사용한다)
+
+- 줄바꿈 특징: 다음 줄로 넘어가지 않고, 앞선 내용의 바로 옆에 이어서 붙는다. 
+화면 오른쪽 끝에 도달해서 더 이상 들어갈 공간이 없을 때만 자연스럽게 다음 줄로 
+넘어간다.
+- 너비와 높이: 요소가 가지고 있는 글자나 콘텐츠의 딱 그 크기만큼만 공간을 차지한다. 
+아주 중요한 특징으로, CSS로 width나 height 크기를 지정해도 무시된다.
+
+- 주요 태그 예시:
+<span> (텍스트 일부를 묶을 때)
+<a> (링크)
+<img> (이미지)
+<strong>, <b> (굵은 글씨)
+<em>, <i> (기 기울임 글씨)
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IMAGE</title>
+</head>
+<body>
+    <!-- 
+    이미지 태그는 시각적 효과를 나타태고자 할때, 사용함
+    <img>: 나홀로 태그(src 속성이 필수적)
+     -->
+    <h1>this is apple</h1>
+    <p>apple is delicious</p>
+
+    <!-- <img src="./res/img/apple.jpg" 
+            width="300" 
+            height="500"> -->
+    <!-- <img(태그) src(경로 지정하는 필수속성)="./res/img/apple.jpg"(필수 속성 값) 
+        width(추가 속성: 가로)="300"(추가 속성 값) 
+        height(추가 속성: 세로)="500"(추가 속성 값)> -->
+    <!-- 추가 속성: 가로, 세로는 2개 중에 1개만 사용해도, 원본의 비율이 유지됨 -->
+
+    <img src="./res/img/apple.jpg" 
+        width="300" 
+        alt="this is apple" 
+        title="apple"
+        loading="lazy">
+    <!-- alt(이미지가 없을 때, 텍스트로 대체하기 위한 용도) 
+        title(그림에 커서를 올려놓을때 표시)
+        loading(로딩에 화면에 나타나는 gif같은 것) -->
+
+    <br>
+
+    <!-- 영상 -->
+    <video width="500" controls>
+        <source src="./res/mov/apple.mp4" type="video/mp4">
+    </video>
+    <!-- <video controls> (비디오 태그: 동영상 재생 옵션)
+        <source src="./res/mov/apple.mp4" type="video/mp4">
+        (source: video의 세부 옵션), src(경로 지정하는 필수속성)
+    </video> -->
+
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/WMweEpGlu_U?si=GmuVU69DW-JiNsXq" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIST</title>
+</head>
+<body>
+    <!-- 목록 관련 태그 -->
+
+    <!-- 순서 없는 목록(인덱스x) -->
+    <h2>메뉴판</h2>
+    <ul>
+        <li>짬뽕 8,000원</li>
+        <li>간짜장 8,000원</li>
+        <li>볶음밥 7,500원</li>
+    </ul>
+
+    <!-- 순서 있는 목록(인덱스o) -->
+    <h2>메뉴판</h2>
+    <ol type="I">
+        <li>짬뽕 8,000원</li>
+        <li>간짜장 8,000원</li>
+        <li>볶음밥 7,500원</li>
+        <li>2짬뽕 8,000원</li>
+        <li>2간짜장 8,000원</li>
+        <li>2볶음밥 7,500원</li>
+    </ol>
+
+    <!-- 설명 목록 -->
+    <dl>
+        <dt>오전 메뉴판</dt>
+        <dd>짬뽕 8,000원</dd>
+        <dd>간짜장 8,000원</dd>
+        <dd>볶음밥 7,500원</dd>
+    <br>        
+        <dt>오후 메뉴판</dt>
+        <dd>2짬뽕 8,000원</dd>
+        <dd>2간짜장 8,000원</dd>
+        <dd>2볶음밥 7,500원</dd>
+    </dl>
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form(양식) 태그</title>
+    <!-- client에서 server로 request를 보낼 때, 사용하는 태그: form -->
+</head>
+<body>
+    <!-- form(양식) 태그 -->
+    <form action="https://192.168.0.144/newmember/sign-up" method="post">
+        <!-- get: 사용자가 입력한 데이터를 '도메인'주소 뒤에 붙어서 전달하는 방식(비보안적)
+            post: 사용자가 입력한 데이터를 'reqest'객체의 body부분에 숨겨져 전달되는 방식(보안적) -->
+        <input type="text" placeholder="회원 NAME 입력 :  ">
+        <br>
+        <input type="text" placeholder="회원 ID 입력 :  ">
+        <br>
+        <input type="password" placeholder="회원 PW 입력 :  ">
+        <br>
+        <input type="text" placeholder="회원 PHONE 입력 :  ">
+        <br>
+        <input type="email" placeholder="회원 MAIL 입력 :  ">
+        <br>
+        <input type="number" min="1" max="20" placeholder="회원 AGE 입력 :  ">
+        <br>
+        좋아하는 색상: <input type="color" value="#215426">
+        <!-- color의 RGB값은 16진수로서 "#(R)NN;(G)NN;(B)NN"으로 ';'은 빼고 표기한다 -->
+        <br>
+        생일: <input type="date">
+        <br>
+        지금: <input type="datetime-local">
+        <br>
+        국가: 
+        <select>
+            <option>대한민국</option>
+            <option>중국</option>
+            <option>미국</option>
+            <option>일본</option>
+            <option>영국</option>
+        </select>
+        <br>
+        취미: 축구: <input type="checkbox"> | 
+        야구: <input type="checkbox"> | 
+        농구: <input type="checkbox">
+        <br>
+        성별: 남성: <input type="radio" name="gender"> | 
+        여성: <input type="radio" name="gender">
+        <br>
+        직업: 학생: <input type="radio" name="job"> | 
+        회사원: <input type="radio" name="job"> | 
+        자영업: <input type="radio" name="job"> | 
+        경찰: <input type="radio" name="job"> | 
+        의사: <input type="radio" name="job"> | 
+        은퇴: <input type="radio" name="job"> | 
+        <br>
+        <!-- <button>회원가입</button> -->
+        <!-- <input type="button" value="회원가입"> -->
+        <input type="submit" value="회원가입"> <input type="reset" value="초기화">
+    </form>
+
+    <br><br>
+
+    <form action="https://192.168.0.144/newmember/sign-up" 
+        method="post" 
+        name="signupform">
+        <input type="text" placeholder="user id">
+        <br>
+        <input type="password" placeholder="user pw">
+        <br>
+        <textarea> </textarea>
+        <br>
+        <input type="submit" value="signin">
+    </form>
+	
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>박</h2>
+    <h2>철</h2>
+    <h2>수</h2>
+    <br>
+
+    <p><strong>Park Cheol-soo</strong>
+        <br>대표이사</p>
+    <br>
+
+    <h3>디자인 스토리</h3>
+    <p>인천광역시 연수구 송도미래로 78,
+        <br>OO빌딩 2층
+        <br>T.031-123-4567
+        <br>F.031-123-4567
+        <br>E.name@naver.com</p>
+
+    <br><br><br>
+
+    <h1>010<br>9876<br>5432</h1>
+    <br><br>
+
+    <h3>DESIGN STORY</h3>
+    <p>78, SongdoMirae-ro, Yeonsu-gu,
+        <br>Incheon, OO Building 2nd Floor
+        <br>T.82.31-123-4567
+        <br>F.82.31-123-4567
+        <br>E.name@naver.com</p>
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LETTER</title>
+</head>
+<body>
+    <h1><a><i>To. Hong Gildong.</i></a></h1>
+    <br><br>
+
+    <center>
+    <h2>How are you doing?</h2>
+    </center>
+    <hr><hr>
+    <br>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores sint eveniet quaerat laborum inventore cum quasi aliquid rem sapiente, est, nisi in rerum veritatis. Dolores qui ab saepe sapiente!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, harum architecto. Fugit, saepe animi! Iusto libero hic soluta, perferendis obcaecati omnis id minus, velit debitis accusantium natus adipisci enim sit?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure adipisci qui, rerum culpa officiis molestiae praesentium aliquam, facere hic, corporis dicta delectus ea? Sint velit praesentium voluptate deleniti deserunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem blanditiis labore aut repellat et distinctio tenetur illum, est quis, facilis, corporis minus unde optio! Porro aspernatur consequuntur reprehenderit molestiae expedita.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, magni, magnam fugit dolores necessitatibus dicta aperiam nisi iure laboriosam modi vero! Provident, consectetur! At est nesciunt inventore autem, asperiores odio.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam quae, culpa delectus fugiat suscipit assumenda, nesciunt reiciendis provident sequi optio aspernatur amet magni, vitae velit? Voluptate in nihil architecto?</p>
+    <br>
+
+    <h1 align="right"><a><i>From. Park Chanho</i></a></h1>
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+CSS(Cascading Style Sheets)
+#HTML로 작성된 웹 문서의 표시 방법, 레이아웃, 디자인을 정의하는 스타일 시트 언어
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+JavaScript
+#웹 브라우저에서 실행되는 가장 대표적인 프로그래밍 언어
+(HTML이 웹사이트의 '뼈대'를 만들고 CSS가 '디자인'을 입힌다면, 
+자바스크립트는 웹사이트가 살아 움직이도록 '생명(동적 기능)'을 불어넣음)
