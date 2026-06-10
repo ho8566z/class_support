@@ -1,0 +1,648 @@
+20260610
+
+
+#HTML (HyperText Markup Language)
+(정보를 구조화하고, 링크를 통해 문서 간 이동을 가능하게 함)
+
+#URI (Uniform Resource Identifier)
+(각각의 자원을 고유하게 식별하기 위한 주소 체계 (이후 URL로 발전))
+
+#HTTP (HyperText Transfer Protocol)
+(클라이언트와 서버 간 문서 요청/응답을 위한 통신 프로토콜)
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+HTML(HyperText Markup Language)
+#웹페이지의 구조와 콘텐츠를 정의하는 표준 마크업 언어
+#HTML은 웹 페이지의 뼈대를 구성하고,텍스트, 이미지, 링크, 영상 등의 요소를 
+어떻게 배치하고 구조화할지를 정의
+(웹문서의 확장자, '데이터를 구조화'함)
+
+ex) <b>this page is mypage.</b>
+#<>: 태그(내용을 보여주거나, 구조화할때 사용함)
+#<>, </>: '<>'로 태그를 열고, '</>'로 태그를 닫음
+#this page is mypage.: Elements(웹문서의 내용)
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+CSS(Cascading Style Sheets)
+#HTML로 작성된 웹 문서의 표시 방법, 레이아웃, 디자인과 스타일을 정의하는 시트 언어
+(Styling Language)
+
+(CSS는 웹 페이지의 디자인과 스타일을 지정하는 언어로, HTML이 웹 페이지의 
+구조(뼈대)를 담당한다면, CSS는 그  구조에 색상, 배치 등을 담당한다)
+
+--> CSS는 스타일링 언어로, HTML이 필수적으로 필요하다
+
+ex)
+선택자(p:선택값) {
+	속성1(color): 속성값1(red),
+	속성2: 속성값2,
+	속성3: 속성값3
+ }
+ 
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+JavaScript
+#웹 브라우저에서 실행되는 가장 대표적인 프로그래밍 언어
+(HTML이 웹사이트의 '뼈대'를 만들고 CSS가 '디자인'을 입힌다면, 
+자바스크립트는 웹사이트가 살아 움직이도록 '생명(동적 기능)'을 불어넣음)
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX002</title>
+
+    <link href="./index002.css" rel="stylesheet" type="text/css">
+    <link href="./index00201.css" rel="stylesheet" type="text/css">
+    <link href="./index00202.css" rel="stylesheet" type="text/css">
+    <link href="./index00203.css" rel="stylesheet" type="text/css">
+    <link href="./index00204.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <h1>This page is INDEX002</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ea recusandae maiores. Quisquam fugit odit harum veritatis repellendus porro veniam doloremque! Nam exercitationem, fugit debitis deserunt quos laborum quidem aut.</p>
+    <br>
+
+    /* 태그 선택자 */
+/* 특정 HTML 태그 이름을 기준으로 요소(element)를 선택하는 CSS 선택자이다 */
+/* 선택자 중에서 가장 많이 사용되는 선택자이다 */
+/* 참고: https://hoazzinews.tistory.com/99 */
+
+/* 기본 문법 */
+/* 
+태그이름 {
+        속성: 속성값;
+}
+*/
+
+/* h1 {
+    color: rgb(255, 0, 0);
+} */
+
+/* p {
+    color: rgb(0, 0, 255);
+} */
+
+/* h1 {
+    color: yellow;
+} */
+
+
+/* =================================================================== */
+/* a[href="https://www.google.com"] {
+    text-decoration: none;
+    color: tomato;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+a.naver {
+    text-decoration: none;
+    color: rgb(71, 83, 255);
+    font-size: 3em;
+    font-weight: bold;
+} */
+
+/* a {
+    color: red;
+    text-decoration: none;
+}
+
+a[href="https://www.naver.com"] {
+    font-size: 1.2em;
+}
+a.naver {
+    font-size: 1.2em;
+} */
+/* a.naver: a(태그명).naver(클래스명) */
+
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+
+    <div id="div001">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam sequi a deleniti at provident quod consequatur porro veritatis doloribus, minima corrupti, quidem aliquid aspernatur. Accusamus quia omnis quasi error inventore?</div>
+    <!-- <div id="div001">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quam dolore veritatis consequatur molestias neque impedit, asperiores ratione eveniet placeat, debitis velit magni perspiciatis soluta odio, omnis atque repudiandae officiis!</div> -->
+    <div id="div002">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae ut ex animi accusamus suscipit nostrum est harum voluptatem sunt nobis dicta asperiores aspernatur saepe iste optio eligendi, tempora velit.</div>
+    <!-- But, ID 선택자는 [id="div001"] 위와 같이 ID가 중복되는 것은 지양해야 한다 -->
+    <!-- ID값은 유니크해야 하며, 각각의 ID를 가져야 한다 -->
+    <br>
+
+    /* ID 선택자 */
+/* HTML 요소의 ID 속성값을 기준으로 스타일을 적용하는 선택자이다 */
+/* 스타일을 적용하는 선택자이다 */
+/* 참고: https://hoazzinews.tistory.com/101 */
+
+/* div {
+    color: rgb(255, 0, 0);
+} */
+
+
+/* 기본 문법 */
+/* 
+#ID이름 {
+        속성: 속성값;
+}
+*/
+
+/* #div001 {
+    color: rgb(0, 255, 255);
+}
+
+#div002 {
+    color: rgb(255, 0, 255);
+} */
+
+
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+
+    <div class="div_class_name01 div_class_name02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae ut ex animi accusamus suscipit nostrum est harum voluptatem sunt nobis dicta asperiores aspernatur saepe iste optio eligendi, tempora velit.</div>
+    <!-- <div class="div_class_name01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae ut ex animi accusamus suscipit nostrum est harum voluptatem sunt nobis dicta asperiores aspernatur saepe iste optio eligendi, tempora velit.</div> -->
+    <div class="div_class_name01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae ut ex animi accusamus suscipit nostrum est harum voluptatem sunt nobis dicta asperiores aspernatur saepe iste optio eligendi, tempora velit.</div>
+    <!--But, 클래스 선택자는 [class="div_class_name01"] ID 선택자와 달리, 중복되아도 상관없다  -->
+    <!-- 클래스 선택자는 유니크하지 않아도 된다 -->
+
+    <!-- But, ID선택자와 클래스선택자의 경우, 선택자명에 '공백'이 존재해서는 안된다 -->
+    <!-- 때문에, ID선택자는 공백없이 연결하고, 클래스선택자는 '_'를 사용한다 -->
+    <br>
+
+    /* 클래스 선택자 */
+/* HTML 문서의 요소(element)의 클래스 이름을 기준으로 스타일하는 선택자이다 */
+/* 참고: https://hoazzinews.tistory.com/100 */
+
+/* 기본 문법 */
+/* 
+.클래스이름 {
+            속성: 속성값;
+}
+*/
+
+/* .div_class_name01 {
+    color: crimson;
+}
+
+.div_class_name02 {
+    color: aqua;
+    font-size: 2em;
+} */
+
+
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+
+    <form>
+        ID: <input type="text" placeholder="INPUT New ID"><br>
+        PW: <input type="password" placeholder="INPUT New PW"><br>
+        MAIL: <input type="email" placeholder="INPUT New MAIL"><br>
+        PHONE: <input type="number" placeholder="INPUT New PHONE"><br>
+        AGE: <input type="number" placeholder="INPUT New AGE"><br>
+        <input type="submit" value="SIGN-UP"><br>
+        <input type="reset" value="RESET"><br>
+    </form>
+    <br>
+
+    /* 속성 선택자 */
+/* HTML 요소 중에서, 특정 속성을 갖고 있는 요소를 선택해서 스타일을 적용하는 선택자이다 */
+/* 정밀한 선택을 하고자 할때, 사용하는 언어 */
+/* 참고: https://hoazzinews.tistory.com/102 */
+
+/* 기본 문법 */
+/* 
+[속성이름] {
+           속성: 속성값;
+}
+*/
+
+/* ex */
+/* input[type="reset"] {
+    color: red;
+}
+
+input[type="email"] {
+    font-size: 1.2em;
+}
+
+input[value="SIGN-UP"] {
+    font-weight: bold;
+} */
+
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+
+
+    <!-- 모든 링크는 빨간색으로, 밑줄은 없앤다, 단, naver는 폰트 사이즈를 1.2em으로 한다 -->
+    <a href="https://www.google.com">go google</a>
+    <a class="naver" href="https://www.naver.com">go naver</a>
+    <br>
+
+    <div>
+        <p>First WORD</p>
+        <section>
+            <p>
+                Second WORD
+                <br>
+                <a href="https://www.naver.com">naver</a>
+                <br>
+                <a class="google" href="https://www.google.com">google</a>
+            </p>
+        </section>
+        <section>
+            <a>gogogogo</a>
+            <b>
+                <a>nononono</a>
+            </b>
+        </section>
+    </div>
+
+/* 자손/후손 선택자 */
+/* 특정 요소 내부에 있는 모든 하위 요소들을 선택할 때, 사용한다 */
+/* 참고: https://hoazzinews.tistory.com/105 */
+
+/* 기본 문법 */
+/* 
+부모선택자 자식선택자 {
+                    속성: 속성값;
+}
+*/  
+
+
+/*
+<!-- <div>
+    <p>First WORD</p>
+    <section>
+        <p>Second WORD</p>
+    </section>
+</div> -->
+*/
+
+/* 후손 선택자 */
+/* div p {
+    color: rgb(0, 255, 200);
+} */
+
+
+/* 자손 선택자 */
+/* div > section > p > a {
+    text-decoration: none;
+} */
+
+/* div > section > p > a {~}: div를 기준으로 후손 선택자로 변경 */
+/* div > section a {
+    color: red;
+    font-weight: bolder;
+}
+
+div a.google {
+    color: teal;
+    font-size: 2em;
+} */
+
+</body>
+</html>
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LETTER</title>
+    <link href="./common.css" rel="stylesheet" type="text/css">
+    <link href="./index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="to">
+            <a href="#none">
+                <h2>To. Hong Gildong.</h2>
+            </a>
+            
+        </div>
+
+        <div class="head">
+            <h3>
+                How are you doing?
+            </h3>
+        </div>
+
+        <div class="body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In adipisci repudiandae modi fugiat, sequi esse impedit reiciendis quis facilis quisquam rem possimus quibusdam repellat nam commodi distinctio ad veniam quas.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat quasi eveniet molestias. Maiores commodi odio dignissimos repellendus modi dolorem qui magnam sit voluptatibus doloribus numquam et neque, quibusdam illum consectetur.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta minus repellat modi ex pariatur perspiciatis, repellendus numquam eaque corporis beatae, consequatur, quam aspernatur quod illum ducimus ab doloremque iure id!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae saepe nam cumque, repellat quo iste maxime vitae autem itaque quae eius iure, in laboriosam placeat at ullam asperiores aliquam nobis.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem blanditiis voluptates facilis quam. Labore quae quaerat cumque reprehenderit laboriosam tenetur corrupti, sequi, accusamus, voluptatibus dolores id amet facilis ut?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sed harum enim vitae doloribus debitis minima similique. Adipisci veritatis quae error quisquam voluptatem delectus, quam dolorem et a molestias eius.</p>
+        </div>
+
+        <div class="from">
+            <a href="#none">
+                <h2>
+                    From. Park Chanho
+                </h2>
+            </a>
+
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<!-- /* *: 전체 태그 선택자 */
+/* 외부 여백: margin, 안쪽 여백: padding */
+
+
+#wrap {
+    width: 800px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    margin: 50px auto;
+    /* =>margin: 0 auto 0 auto; */
+    box-shadow: 3px 3px 3px rgba(200, 200, 200, .5);
+    padding: 80px 50px;
+    /* padding: 80px 50px 80px 50px; */
+}
+
+#wrap div.to {
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+#wrap div.head {
+    width: 90%;
+    margin:  0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: double #dadada;
+}
+
+#wrap div.body {
+    width: 90%;
+    margin: 30px auto;
+}
+
+#wrap div.body p {
+    margin: 20px 0;
+}
+
+#wrap div.from {
+    font-style: italic;
+    margin-top: 50px;
+    text-align: right;
+}
+ -->
+
+<!-- * {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: underline;
+} -->
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GOODS LIST</title>
+
+    <link href="./index.css" rel="stylesheet" type="text/css">
+    <link href="./common.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+    <div id="wrap">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/935-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>어떤 루피가</p>
+                                <p>루피가 좋아?</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/836-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>여름쭉~입어요</p>
+                                <p>세트가격 5900원</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/788-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>비비고왕교자2개</p>
+                                <p>최대 46%쿠폰</p>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/1013-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>역대급 73%할인</p>
+                                <p>이기회에 쟁여둬</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/16-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>셀럽 착용 반지</p>
+                                <p>할인가1만원대</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/165-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>봄~여름 DAILY</p>
+                                <p>2장에 18,900원</p>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/454-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>전상품UPTO50%</p>
+                                <p>조이유 시즌SALE</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/482-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>7% 전체세일</p>
+                                <p>끝나기전에클릭</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/484-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>예뻐서 다들 탐내</p>
+                                <p>망설이다 못사요</p>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/586-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>티파니 BEST팔찌</p>
+                                <p>봄맞이 명품할인</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/757-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>신상침구입고</p>
+                                <p>미리여름준비</p>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="#none">
+                                <img src="./img/614-214x292.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                <p>가볍게 툭~</p>
+                                <p>입어도 BEST</p>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
+<!-- #wrap {
+    width: 345px;
+    margin: 0 auto;
+}
+
+#wrap > table {
+    border-collapse: collapse;
+}
+
+#wrap > table > tbody > tr > td {
+    padding: 12px 4px;
+}
+
+#wrap > table > tbody > tr > td div:nth-child(1) img {
+    min-width: 107px;
+    max-width: 107px;
+}
+
+#wrap > table > tbody > tr > td div:nth-child(2) p {
+    font-size: .85em;
+    text-align: center;
+}
+
+#wrap > table > tbody > tr > td div:nth-child(2) p:nth-child(1) {
+    font-weight: bold;
+}
+ -->
+
+<!-- * {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #242424;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+ -->
+ 
