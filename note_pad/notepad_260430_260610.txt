@@ -5431,3 +5431,374 @@ li {
 [20260611]
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLIDE</title>
+
+    <link href="./common.css" rel="stylesheet" type="text/css">
+    <link href="./index.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <div class="slide_wrap">
+
+            <ul>
+                <li class="item_wrap">
+                    <div class="thum">
+                        <a href="#none"><img src="./res/img/1075-500x500.jpg"></a>
+                    </div>
+                    <div class="goods_info">
+                        <a href="#none">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a>
+                    </div>
+                    <div class="goods_price">
+                        <a href="#none">41,220<span>원</span></a>
+                    </div>
+                    <div class="no">
+                        01
+                    </div>
+                    <div class="sticker">
+                        <img src="./res/img/1053-100x100.jpg">
+                    </div>
+                </li>
+
+                <li class="item_wrap">
+                    <div class="thum">
+                        <a href="#none"><img src="./res/img/1075-500x500.jpg"></a>
+                    </div>
+                    <div class="goods_info">
+                        <a href="#none">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a>
+                    </div>
+                    <div class="goods_price">
+                        <a href="#none">41,220<span>원</span></a>
+                    </div>
+                    <div class="no">
+                        02
+                    </div>
+                    <div class="sticker">
+                        <img src="./res/img/1053-100x100.jpg">
+                    </div>
+                </li>
+
+                <li class="item_wrap">
+                    <div class="thum">
+                        <a href="#none"><img src="./res/img/1075-500x500.jpg"></a>
+                    </div>
+                    <div class="goods_info">
+                        <a href="#none">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a>
+                    </div>
+                    <div class="goods_price">
+                        <a href="#none">41,220<span>원</span></a>
+                    </div>
+                    <div class="no">
+                        03
+                    </div>
+                    <div class="sticker">
+                        <img src="./res/img/1053-100x100.jpg">
+                    </div>
+                </li>
+
+                <li class="item_wrap">
+                    <div class="thum">
+                        <a href="#none"><img src="./res/img/1075-500x500.jpg"></a>
+                    </div>
+                    <div class="goods_info">
+                        <a href="#none">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a>
+                    </div>
+                    <div class="goods_price">
+                        <a href="#none">41,220<span>원</span></a>
+                    </div>
+                    <div class="no">
+                        04
+                    </div>
+                    <div class="sticker">
+                        <img src="./res/img/1053-100x100.jpg">
+                    </div>
+                </li>
+                
+                <li class="item_wrap">
+                    <div class="thum">
+                        <a href="#none"><img src="./res/img/1075-500x500.jpg"></a>
+                    </div>
+                    <div class="goods_info">
+                        <a href="#none">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a>
+                    </div>
+                    <div class="goods_price">
+                        <a href="#none">41,220<span>원</span></a>
+                    </div>
+                    <div class="no">
+                        05
+                    </div>
+                    <div class="sticker">
+                        <img src="./res/img/1053-100x100.jpg">
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="left_arrow">
+                <a href="#none"><img src="./res/img/img02.png"></a>
+            </div>
+            
+            <div class="right_arrow">
+                <a href="#none"><img src="./res/img/img01.png"></a>
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- * {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #242424;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+    float: left;
+}
+ -->
+
+
+ <!-- #wrap {
+    width: 1450px;
+    margin: 10px auto;
+}
+
+#wrap div.slide_wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    border-top: 1px dashed #dadada;
+    border-bottom: 1px dashed #dadada;
+    padding: 50px 0;
+}
+
+#wrap div.slide_wrap ul li.item_wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 20px;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.thum img {
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 125px;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.goods_info {
+    width: 250px;
+    text-align: center;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.goods_price {
+    width: 250px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.goods_price span {
+    font-weight: normal;
+    font-size: .7em;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.no {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #00c01e;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.sticker {
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+#wrap div.slide_wrap ul li.item_wrap div.sticker img {
+    min-width: 50px;
+    max-width: 50px;
+    border-radius: 25px;
+}
+
+#wrap div.slide_wrap > div.left_arrow,
+#wrap div.slide_wrap > div.right_arrow {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    left: 1425px;
+    border: 2px solid #dadada;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+#wrap div.slide_wrap > div.left_arrow {
+    left: -25px;
+}
+
+#wrap div.slide_wrap > div.left_arrow img, 
+#wrap div.slide_wrap > div.right_arrow img {
+    min-width: 50px;
+    max-width: 50px;
+    border-radius: 25px;
+} -->
+
+</body>
+</html>
+
+------------------------------------------------------------------------
+JavaScript
+#웹 브라우저에서 실행되는 가장 대표적인 프로그래밍 언어
+(HTML이 웹사이트의 '뼈대'를 만들고 CSS가 '디자인'을 입힌다면, 
+자바스크립트는 웹사이트가 살아 움직이도록 '생명(동적 기능)'을 불어넣음)
+
+------------------------------------------------------------------------
+# JavaScript
+- 웹 브라우저에서 동작하는 스크립트 언어(Scripting Language)이다.
+- HTML과 CSS가 웹 페이지의 구조와 디자인을 담당한다면, JavaScript는 
+	웹 페이지의 동작(기능)을 담당한다.
+-> 즉, JavaScript는 웹을 '정적인 페이지'에서 '동적인 애플리케이션'으로 
+	변화시킨 핵심 언어이다.
+
+--> 원래는 브라우저 안에서만 실행되는 언어였지만, Node.js의 등장 이후 서버, 
+	데스크톱, 모바일, IoT 등 다양한 환경에서도 사용할 수 있는 범용 
+	프로그래밍 언어로 발전했다.
+
+------------------------------------------------------------------------
+ # JavaScript 역사
+- 1995년, Netscape사의 Brendan Eich이(가) 초기 버전을 개발,
+- 1997년, JavaScript는 ECMA(European Computer Manufacturers Association)에 
+	의해 표준화되었고, 표준 명칭은 ECMAScript이다.
+- 현재, 우리가 사용하는 JavaScript는 실제로 ECMAScript 표준을 구현한 언어이다.
+- 2015년, ES6(ECMAScript 2015)가 발표되면서 let, const, 화살표 함수, 클래스, 모듈 등 
+	현대적 기능이 대거 추가되어 지금의 JavaScript 생태계가 형성되었다.
+(참고: Java와는 이름이 비슷하지만 전혀 다른 언어입니다.)
+
+------------------------------------------------------------------------
+# JavaScript 특징
+- 인터프리터 언어
+	코드를 한 줄씩 읽고 즉시 실행한다.
+	별도의 컴파일 과정이 필요하지 않아 실행이 빠르고 간단하다.
+- 동적 타이핑(Dynamic Typing)
+	변수의 자료형을 미리 지정하지 않아도 된다.
+	코드 작성이 유연하지만, 타입 오류가 런타임에 발생할 수 있다.
+- 객체 기반(Object-based)
+	모든 것이 객체처럼 동작한다.
+	객체를 통해 데이터와 기능을 묶어 표현할 수 있다.
+- 이벤트 중심(Event-driven)
+	사용자의 클릭, 키보드 입력, 스크롤 같은 이벤트에 반응하는 프로그램을 
+	쉽게 작성할 수 있다.
+- 멀티 패러다임 언어
+	명령형, 함수형, 객체지향 프로그래밍 방식을 모두 지원한다.
+
+------------------------------------------------------------------------
+# JavaScript 활용분야
+- 웹 프론트엔드 개발
+	HTML, CSS와 함께 웹의 3대 핵심 기술
+	React, Vue, Svelte 등 프레임워크를 이용해 복잡한 UI를 구현한다.
+- 백엔드 개발 (Node.js)
+	서버 측 로직을 JavaScript로 작성할 수 있다.
+	Express.js, NestJS 등이 대표적인 백엔드 프레임워크
+- 모바일 & 데스크톱 앱 개발
+	React Native, Ionic 등을 이용해 모바일 앱 개발 가능
+	Electron을 사용하면 데스크톱 앱도 만들 수 있다.
+(예: Visual Studio Code, Slack)
+- 게임, 인공지능, IoT 등
+	WebGL을 이용한 웹 게임, TensorFlow.js를 이용한 머신러닝,
+	라즈베리파이 기반 IoT 제어에도 활용된다.
+ 
+------------------------------------------------------------------------
+# JavaScript 실행 환경
+- 브라우저 환경:
+	Chrome(V8 엔진), Firefox(SpiderMonkey), Safari(JavaScriptCore) 등 각 
+	브라우저가 내장 엔진을 가지고 코드를 실행한다.
+- 서버 환경:
+	Node.js가 대표적이며, 브라우저 외부에서도 JavaScript를 실행할 수 있게 해준다.
+(JavaScript는 여러 환경에서 실행될 수 있다) 
+
+------------------------------------------------------------------------
+<!-- https://hoazzinews.tistory.com/110 javascript 개념 -->
+<!-- https://hoazzinews.tistory.com/111 변수-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!-- 2.외부(External) -->
+    <script src="./index.js"></script>
+    <!-- // console.log("Hello, Javascript_1");
+         // console.log("Hello, Javascript_2");
+         // console.log("Hello, Javascript_3"); -->
+
+    <!-- 1.내부(Internal) -->
+    <script language="javascript">
+        // console.log("Hello_1");
+        // console.log("Hello_2");
+    </script>
+
+</head>
+<body>
+
+<!-- 
+    // javascript의 변수란?
+// var, let, const 키워드를 사용해 선언한다
+var num = 10;
+console.log('num: ', num)
+console.log('num: ' + num)
+
+
+/* 
+변수 이름 작성 규칙 (식별자 규칙)
+
+- 영문자, 숫자, _, $만 사용할 수 있습니다.
+- 숫자로 시작할 수 없습니다.
+- 대소문자를 구분합니다 (age와 Age는 다른 변수입니다).
+- JavaScript의 예약어(if, for, class 등)는 변수명으로 사용할 수 없습니다.
+- 의미 있는 이름을 사용하는 것이 좋습니다. (x, y보다는 userAge, price 등)
+*/ 
+-->
+    
+</body>
+</html>
+
+------------------------------------------------------------------------
+# 변수 키워드
+- var: 오래된 선언 방식. 중복 선언 가능, 블록 스코프 미지원 (사용 지양)
+- let: 재할당 가능, 블록 스코프 지원 (가장 일반적인 변수 선언 방식)
+- const: 재할당 불가능, 상수처럼 사용 (변하지 않는 값을 저장할 때 사용)
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[20260615]
+
+
